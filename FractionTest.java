@@ -10,11 +10,31 @@ public class FractionTest {
     Fraction h = new Fraction(3,5);
     if (!f.equals(g.multiply(h))) System.out.println("Multiply failed"); */
 
-    Fraction i = new Fraction(1, 2);
+    /* Fraction i = new Fraction(1, -2);
     Fraction n = new Fraction(11, 15);
     Fraction test = i.divide(n);
-    System.out.println(test);
+    System.out.println(test); */
     
+    Fraction p = new Fraction(11, -15);
+    System.out.println(p.negate());
+    
+    System.out.println(p.absValue());
+    
+    Fraction j = new Fraction(5, 1);
+    System.out.println(j);
+    
+    
+    /* int i = -1;
+    
+    System.out.println(i);
+    
+    String s = Integer.toString(i);
+    
+    System.out.println(s);
+    
+    System.out.println(s.charAt(0));
+    
+    System.out.println(s.charAt(1)); */
     
     // test equals
     /* test(new Fraction(1, 2),new Fraction(1, 2),"error test 1");

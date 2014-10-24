@@ -17,7 +17,12 @@ public class Fraction {
     
     @Override
     public String toString() {
-        return "" + getNumerator() + '/' + getDenominator();
+        if (this.getDenominator() == 1) {
+            return "" + this.getNumerator();
+        }
+        else {
+            return "" + getNumerator() + '/' + getDenominator();
+        }
     }
     
     public int getNumerator() {
@@ -89,6 +94,30 @@ public class Fraction {
         
         return new Fraction(num, denom);
     }
+    
+    
+    public Fraction absValue() {
+        if (this.getNumerator() < 0) {
+            return this.negate();
+        }
+        else {
+            return new Fraction(this.getNumerator(), this.getDenominator());
+        }
+        
+    }
+    
+    
+    
+    public Fraction negate() {
+    
+        int num = this.numerator *-1;
+        int denom = this.denominator;
+        
+        return new Fraction(num, denom);
+            
+    }
+    
+    
     
     private int myGcd(int a, int b) {
         while (b != 0) {
