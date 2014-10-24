@@ -5,17 +5,23 @@ public class FractionTest {
     new Fraction(1, 0);
 
     // test multiply
-    Fraction f = new Fraction(3,10);
+   /*  Fraction f = new Fraction(3,10);
     Fraction g = new Fraction(1,2);
     Fraction h = new Fraction(3,5);
-    if (!f.equals(g.multiply(h))) System.out.println("Multiply failed");
+    if (!f.equals(g.multiply(h))) System.out.println("Multiply failed"); */
 
+    Fraction i = new Fraction(1, 2);
+    Fraction n = new Fraction(11, 15);
+    Fraction test = i.divide(n);
+    System.out.println(test);
+    
+    
     // test equals
-    test(new Fraction(1, 2),new Fraction(1, 2),"error test 1");
+    /* test(new Fraction(1, 2),new Fraction(1, 2),"error test 1");
     test(new Fraction(1, 2),new Fraction(3, 6),"error test 2");
     test(new Fraction(-1, 2),new Fraction(1, -2),"error test 3");
     test(new Fraction(-1, -2),new Fraction(1, 2),"error test 4");
-    test(new Fraction(4, -8),new Fraction(1, 2),"error test 5");
+    test(new Fraction(4, -8),new Fraction(1, 2),"error test 5"); */
     // extend with extra tests
 }
 
