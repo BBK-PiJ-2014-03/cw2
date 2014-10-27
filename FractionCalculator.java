@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class FractionCalculator {
     
     private final int ADDITION = 1;
@@ -11,10 +13,38 @@ public class FractionCalculator {
     private Fraction secondFraction = null;
     
     public static void main(String[] args) {
+        
+        Scanner keyboard = new Scanner(System.in);
         FractionCalculator userCalc = new FractionCalculator();
+        String entryString;
         
         System.out.println("Hello, welcome to Ian's Fraction Calculator.");
+        System.out.println("Enter lines of input to perform maths on fractions.");
+        System.out.println("To exit the calculator enter 'Exit'.");
         
+        boolean error = false;
+        while (!error) {
+        
+            System.out.print("Enter line of input > ");
+            entryString = keyboard.nextLine();
+            
+            if (entryString.equals("Exit")) {
+                System.out.println("GoodBye");
+                error = true;
+                break;
+            }
+            try {
+                System.out.println(userCalc.evaluate(userCalc.getUserFraction(), entryString));
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Error");
+                userCalc.evaluate(userCalc.getUserFraction(), "clear");
+            }
+            catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Error");
+                userCalc.evaluate(userCalc.getUserFraction(), "clear");
+            }
+        }
     }
     
     public Fraction evaluate(Fraction fraction, String inputString) {
@@ -97,16 +127,13 @@ public class FractionCalculator {
                     Fraction intFraction = new Fraction(Integer.parseInt(userArray[count]), 1);
                     userFraction = intFraction;
                 }
-            
             }
             else if (userArray[count].equalsIgnoreCase("q") || userArray[count].equals("quit")) {
                 Fraction clearFraction = new Fraction(0, 1);
                 userFraction = clearFraction;
-                System.out.println("You have exited the Calculator program.");
+                System.out.println("You have reset the Calculator Program.");
                 break;
             }
-            
-            
             else {
                 if (this.operatorStored()) {
                     String[] fractionStringArray = userArray[count].split("/");
@@ -154,6 +181,7 @@ public class FractionCalculator {
             return false;
         }
     }
+    
     private boolean isNumber(String str) {
         
         for (int count = 0; count < str.length(); count++) {
@@ -163,6 +191,7 @@ public class FractionCalculator {
         }
         return true;
     }
+    
     public int getOperator() {
         return operator;
     }
