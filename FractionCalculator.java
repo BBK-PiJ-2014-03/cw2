@@ -19,7 +19,7 @@ public class FractionCalculator {
         String entryString;
         
         System.out.println("Hello, welcome to Ian's Fraction Calculator.");
-        System.out.println("Enter lines of input to perform maths on fractions.");
+        System.out.println("Enter lines of input to perform fun maths on fractions.");
         System.out.println("To exit the calculator enter 'Exit'.");
         
         boolean error = false;
@@ -41,6 +41,10 @@ public class FractionCalculator {
                 userCalc.evaluate(userCalc.getUserFraction(), "clear");
             }
             catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Error");
+                userCalc.evaluate(userCalc.getUserFraction(), "clear");
+            }
+            catch (Exception e) {
                 System.out.println("Error");
                 userCalc.evaluate(userCalc.getUserFraction(), "clear");
             }
