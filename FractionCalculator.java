@@ -64,10 +64,31 @@ public class FractionCalculator {
                 userFraction = clearFraction;
             }
             else if (this.isNumber(userArray[count])) {
-                if (secondFraction == null) {
+                if (this.operatorStored()) {
                     Fraction intFraction = new Fraction(Integer.parseInt(userArray[count]), 1);
                     secondFraction = intFraction;
-                    
+                    if (this.operator == 1) {
+                        userFraction = userFraction.add(secondFraction);
+                        secondFraction = null;
+                    }
+                    else if (this.operator == 2) {
+                        userFraction = userFraction.subtract(secondFraction);
+                        secondFraction = null;
+                    }
+                    else if (this.operator == 3) {
+                        userFraction = userFraction.multiply(secondFraction);
+                        secondFraction = null;
+                    }
+                    else if (this.operator == 4) {
+                        userFraction = userFraction.divide(secondFraction);
+                        secondFraction = null;
+                    }
+                }
+                else {
+                    Fraction intFraction = new Fraction(Integer.parseInt(userArray[count]), 1);
+                    userFraction = intFraction;
+                }
+            
             }
             else if (userArray[count].equalsIgnoreCase("q") || userArray[count].equals("quit")) {
                 Fraction clearFraction = new Fraction(0, 1);
@@ -82,6 +103,7 @@ public class FractionCalculator {
         
         return new Fraction(userFraction.getNumerator(), userFraction.getDenominator());
     }
+    
     
     private boolean operatorStored() {
         if (this.operator > 0 && this.operator < 5) {
