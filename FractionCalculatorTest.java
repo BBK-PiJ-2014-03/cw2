@@ -4,7 +4,7 @@ public class FractionCalculatorTest {
         
         FractionCalculator fc = new FractionCalculator();
         
-        Fraction testFraction = new Fraction(-2, 3);
+        Fraction testFraction = new Fraction(2, 3);
         
         
         /* // Testing Clear
@@ -19,11 +19,25 @@ public class FractionCalculatorTest {
         
         System.out.println(fc.toString()); */
         
-        
-        fc.evaluate(testFraction, "50 quit 100");
+        /* // Testing Quit
+        fc.evaluate(testFraction, "50 quit 100"); */
         
         System.out.println(fc.toString());
         
+        /* // Testing how to split user integer entry
+        String newString = "123/4";
+        String[] newArray = newString.split("/");
         
-    }
+        int num = Integer.parseInt(newArray[0]);
+        int denom = Integer.parseInt(newArray[1]);
+        
+        System.out.println(num + denom); */
+        
+        
+        // Testing long Strings of input
+        System.out.println(fc.evaluate(testFraction, "- - 1/3 "));
+        
+        
+        
+        }
 }

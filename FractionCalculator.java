@@ -70,18 +70,22 @@ public class FractionCalculator {
                     if (this.operator == 1) {
                         userFraction = userFraction.add(secondFraction);
                         secondFraction = null;
+                        operator = 0;
                     }
                     else if (this.operator == 2) {
                         userFraction = userFraction.subtract(secondFraction);
                         secondFraction = null;
+                        operator = 0;
                     }
                     else if (this.operator == 3) {
                         userFraction = userFraction.multiply(secondFraction);
                         secondFraction = null;
+                        operator = 0;
                     }
                     else if (this.operator == 4) {
                         userFraction = userFraction.divide(secondFraction);
                         secondFraction = null;
+                        operator = 0;
                     }
                 }
                 else {
@@ -98,12 +102,49 @@ public class FractionCalculator {
             }
             
             
+            else {
+                if (this.operatorStored()) {
+                    String[] fractionStringArray = userArray[count].split("/");
+                    int num = Integer.parseInt(fractionStringArray[0]);
+                    int denom = Integer.parseInt(fractionStringArray[1]);
+                    Fraction secondFraction = new Fraction(num, denom);
+                    if (this.operator == 1) {
+                        userFraction = userFraction.add(secondFraction);
+                        secondFraction = null;
+                        operator = 0;
+                    }
+                    else if (this.operator == 2) {
+                        userFraction = userFraction.subtract(secondFraction);
+                        secondFraction = null;
+                        operator = 0;
+                    }
+                    else if (this.operator == 3) {
+                        userFraction = userFraction.multiply(secondFraction);
+                        secondFraction = null;
+                        operator = 0;
+                    }
+                    else if (this.operator == 4) {
+                        userFraction = userFraction.divide(secondFraction);
+                        secondFraction = null;
+                        operator = 0;
+                    }
+                }
+                else {
+                    String[] fractionStringArray = userArray[count].split("/");
+                    int num = Integer.parseInt(fractionStringArray[0]);
+                    int denom = Integer.parseInt(fractionStringArray[1]);
+                    Fraction secondFraction = new Fraction(num, denom);
+                    userFraction = secondFraction;
+                }
+                    
+                        
+                    
             
+            
+            }
         }
-        
         return new Fraction(userFraction.getNumerator(), userFraction.getDenominator());
     }
-    
     
     private boolean operatorStored() {
         if (this.operator > 0 && this.operator < 5) {
