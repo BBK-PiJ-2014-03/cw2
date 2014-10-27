@@ -10,7 +10,12 @@ public class FractionCalculator {
     private Fraction userFraction = new Fraction(0, 1);
     private Fraction secondFraction = null;
     
-    
+    public static void main(String[] args) {
+        FractionCalculator userCalc = new FractionCalculator();
+        
+        System.out.println("Hello, welcome to Ian's Fraction Calculator.");
+        
+    }
     
     public Fraction evaluate(Fraction fraction, String inputString) {
         
@@ -136,11 +141,6 @@ public class FractionCalculator {
                     Fraction secondFraction = new Fraction(num, denom);
                     userFraction = secondFraction;
                 }
-                    
-                        
-                    
-            
-            
             }
         }
         return new Fraction(userFraction.getNumerator(), userFraction.getDenominator());
@@ -154,9 +154,6 @@ public class FractionCalculator {
             return false;
         }
     }
-    
-    
-    
     private boolean isNumber(String str) {
         
         for (int count = 0; count < str.length(); count++) {
@@ -166,8 +163,6 @@ public class FractionCalculator {
         }
         return true;
     }
-    
-    
     public int getOperator() {
         return operator;
     }
