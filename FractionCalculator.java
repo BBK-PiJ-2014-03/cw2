@@ -52,7 +52,6 @@ public class FractionCalculator {
         String[] userArray = inputString.split(" ");
         userFraction = fraction;
         
-        
         for (int count = 0; count < userArray.length; count++) {
             if (userArray[count].equals("+")) {
                 if (this.operatorStored()) {
@@ -87,12 +86,10 @@ public class FractionCalculator {
                 }
             }
             else if (userArray[count].equalsIgnoreCase("a") || userArray[count].equals("abs")) {
-                Fraction absFraction = userFraction.absValue();
-                userFraction = absFraction;
+                userFraction = userFraction.absValue();
             }
             else if (userArray[count].equalsIgnoreCase("n") || userArray[count].equals("neg")) {
-                Fraction negFraction = userFraction.negate();
-                userFraction = negFraction;
+                userFraction = userFraction.negate();
             }
             else if (userArray[count].equalsIgnoreCase("c") || userArray[count].equals("clear")) {
                 Fraction clearFraction = new Fraction(0, 1);

@@ -1,11 +1,9 @@
 public class FractionCalculatorTest {
     public static void main(String[] args) {
         
-        
         FractionCalculator fc = new FractionCalculator();
         
         Fraction testFraction = new Fraction(2, 3);
-        
         
         /* // Testing Clear
         fc.evaluate(testFraction, "* / clear"); */
@@ -36,8 +34,5 @@ public class FractionCalculatorTest {
         
         // Testing long Strings of input
         System.out.println(fc.evaluate(testFraction, "- - 1/3 "));
-        
-        
-        
-        }
+    }
 }

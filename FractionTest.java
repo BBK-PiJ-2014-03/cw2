@@ -47,6 +47,12 @@ public class FractionTest {
     test(new Fraction(-1, -2),new Fraction(1, 2),"error test 4");
     test(new Fraction(4, -8),new Fraction(1, 2),"error test 5"); */
     // extend with extra tests
+    
+    /* // Testing absValue() method
+    Fraction i = new Fraction(-1, 4);
+    System.out.println(i);
+    Fraction j = i.absValue();
+    System.out.println(j); */
 }
 
 static void test(Fraction f1, Fraction f2, String msg){

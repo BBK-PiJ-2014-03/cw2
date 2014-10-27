@@ -97,7 +97,7 @@ public class Fraction {
     
     
     public Fraction absValue() {
-        if (this.getNumerator() < 0) {
+        if (this.getNumerator() < 0 || this.getDenominator() < 0) {
             return this.negate();
         }
         else {
@@ -105,8 +105,6 @@ public class Fraction {
         }
         
     }
-    
-    
     
     public Fraction negate() {
     
@@ -117,8 +115,6 @@ public class Fraction {
             
     }
     
-    
-    
     private int myGcd(int a, int b) {
         while (b != 0) {
             int t = b;
@@ -127,9 +123,4 @@ public class Fraction {
         }   
         return a;
     }
-    
-    
-    
-    
-    
 }
