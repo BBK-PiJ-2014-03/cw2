@@ -10,18 +10,22 @@ public class FractionTest {
     Fraction h = new Fraction(3,5);
     if (!f.equals(g.multiply(h))) System.out.println("Multiply failed"); */
 
-    /* Fraction i = new Fraction(1, -2);
-    Fraction n = new Fraction(11, 15);
-    Fraction test = i.divide(n);
+    /* Fraction i = new Fraction(5, 1);
+    Fraction n = new Fraction(5, 1);
+    Fraction test = i.add(n);
     System.out.println(test); */
     
-    Fraction p = new Fraction(11, -15);
-    System.out.println(p.negate());
     
-    System.out.println(p.absValue());
+    /* Fraction p = new Fraction(1, 2);
+    Fraction j = p.negate();
+    Fraction a = new Fraction(2, 3);
+    System.out.println(j.add(a)); */
+    
+    
+    /* System.out.println(p.absValue());
     
     Fraction j = new Fraction(5, 1);
-    System.out.println(j);
+    System.out.println(j); */
     
     
     /* int i = -1;

@@ -110,8 +110,8 @@ public class Fraction {
     
     public Fraction negate() {
     
-        int num = this.numerator *-1;
-        int denom = this.denominator;
+        int num = this.getNumerator() *-1;
+        int denom = this.getDenominator();
         
         return new Fraction(num, denom);
             
