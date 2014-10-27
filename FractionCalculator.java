@@ -167,6 +167,10 @@ public class FractionCalculator {
         return operator;
     }
     
+    public Fraction getUserFraction() {
+        return userFraction;
+    }
+    
     public String toString() {
         return userFraction.toString();
     }
